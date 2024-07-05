@@ -1,0 +1,100 @@
+
+/* usado para alterar o tamanho de altura e bordas dos elementos  */
+* {
+    box-sizing: border-box
+}
+
+/* modifica o contêiner do slideshow    */
+.slideshow-container {
+    max-width: 1000px; /* serve para definir o limite maximo de largura do slideshow */
+    position: relative; /*torna o elemento relativo assim ele "passa por cima dos outros elementos" na exibição */
+    margin: auto; /* Coloca o container no centro de forma horizontal na pagina*/
+}
+
+.mySlides {
+    display: none; /* os slides não seram exibidos logo de inicio causando um efeito mais gradativo e mais legal*/
+}
+
+/* para modificar os botões  "anterior" e "próximo" */
+.anterior,
+.proximo {
+    cursor: pointer; /* o cursor se transforma ao passar sobre os botões por exemplo se torna uma "mão" */
+    position: absolute; /* torna o elemento absoluto e independente em relação ao elemento pai */
+    top: 50%; /* alinha os botões de forma vertical no centro */
+    width: auto; /* define a largura automatica */
+    margin-top: -22px; /* organiza a altura  dos botões para centralizá-los */
+    padding: 16px; /* adiciona um tamanho de espaçamento interno dos botões */
+    color: white;/* seleciona a cor do texto dos botões como branca */
+    font-weight: bold; /*  seleciona o peso da fonte como negrito */
+    font-size: 18px; /* Define o tamanho da fonte */
+    transition: 0.6s ease; /* Adiciona o tempo 0.6 segundos de transição de uma imagem para outra */
+    border-radius: 0 3px 3px 0; /* coloca bordas arredondadas no botão */
+    user-select: none; /* Evita que o texto dos botões seja selecionado */
+}
+
+/* para modificar o botão proximo */
+.proximo {
+    right: 0; /* Posiciona o botão à direita  */
+    border-radius: 3px 0 0 3px; /* coloca bordas arredondadas no botão */
+}
+
+/* Muda a cor de fundo dos botões ao passar o mouse sobre eles */
+.anterior:hover,
+.proximo:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* seleciona o nivel de transparencia da cor de fundo */
+}
+
+/* para modificar o texto que aparece sobre as imagens */
+.text {
+    color: #f2f2f2; /* cor do texto*/
+    font-size: 15px; /* tamanho da fonte */
+    padding: 8px 12px; /* espaçamento interno*/
+    position: absolute; /* agora o texto é absoluto*/
+    bottom: 8px; /* texto na parte de baixo do container*/
+    width: 100%; /* largura do texto no container*/
+    text-align: center; /* texto vai para o centro*/
+}
+
+/* modifica o texto que mostra o numero do slide  */
+.numbertext {
+    color: #f2f2f2; 
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+
+/* mofica os pontos abaixo das imagens */
+.ponto {
+    cursor: pointer; /* "mouse mãozinha" */
+    height: 15px;  /* altura dos pontos */
+    width: 15px; /* largura dos pontos */
+    margin: 0 2px; /* margem horizontal */
+    background-color: #bbb; /* cor de fundo dos pontos */
+    border-radius: 50%; /* bordas redondas */
+    display: inline-block;  /* exibição dos pontos*/
+    transition: background-color 0.6s ease;  /* transição das imagens*/
+}
+
+/* Muda a cor do ponto de acordo com a imagem e muda ao passar o mouse */
+.active,
+.ponto:hover {
+    background-color: #717171;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 2.5s;
+}
+
+/* Define a animação dos slides alterando a cor e transparencia ou opacidade */
+@keyframes fade {
+    from {
+        opacity: .2
+    }
+
+    to {
+        opacity: 1
+    }
+}
